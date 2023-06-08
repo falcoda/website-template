@@ -8,7 +8,6 @@ const expressStaticGzip = require("express-static-gzip");
 const cors = require("cors");
 const compression = require('compression');
 const path = require('path');
-const { createProxyMiddleware } = require('http-proxy-middleware');
 const app =  express();
 
 // Use body-parser to get POST requests for API use
@@ -34,26 +33,6 @@ app.use('/', expressStaticGzip(__dirname +'/build/', {
     res.setHeader('Cache-Control', 'public, max-age=31536000');
   }
 }));
-
-// Create a proxy middleware for /api
-
-app.use('/api', createProxyMiddleware({
-  target: 'https://mcnscan.io/',
-  changeOrigin: true,
-  onError(err, req, res) {
-    console.error('Error proxying request:', err);
-    res.status(500).send('Error occurred while proxying request.');
-  },
-  onProxyReq(proxyReq, req, res) {
-    if (req.method === 'POST' && req.body) {
-      const bodyData = JSON.stringify(req.body);
-      proxyReq.setHeader('Content-Type', 'application/json');
-      proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
-      proxyReq.write(bodyData);
-    }
-  }
-}));
-
 
 // to get the frontend routes
 app.get('*', (req, res) => {
