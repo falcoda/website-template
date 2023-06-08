@@ -3,5 +3,5 @@
 }
 
 www.myDomain.com, myDomain.com {
-  reverse_proxy 192.168.10.10:4001
+  reverse_proxy 192.168.10.2:4001
 }
