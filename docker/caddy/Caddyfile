@@ -1,0 +1,11 @@
+{
+  email corentda@hotmail.fr
+}
+
+www.mcnwallet.io, mcnwallet.io {
+  reverse_proxy 192.168.10.10:4001
+}
+
+www.wallet.mcnpoc5.xyz, wallet.mcnpoc5.xyz {
+  reverse_proxy 192.168.10.100:4001
+}

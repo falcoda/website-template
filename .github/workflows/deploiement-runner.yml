@@ -1,0 +1,45 @@
+name: deployment
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  VPS-deployment:
+    runs-on: [ self-hosted ]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Copy Docker to Backend
+        run: cp -R docker backend
+          
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm install
+
+      - name: Build frontend
+        working-directory: frontend
+        run: CI= npm run build
+
+      - name: Move build to backend
+        run: mv frontend/build backend/
+
+      - name: Install dependencies (backend)
+        working-directory: backend
+        run: npm install
+      
+      - name: Copy backend to walletRunner
+        run: cp -R backend/* /home/corentin/walletRunner
+      
+      - name: Restart Services and Deploy
+        working-directory: /home/corentin/walletRunner
+        run : | 
+          ls
+          cd docker    
+          docker-compose down     
+          docker-compose up -d

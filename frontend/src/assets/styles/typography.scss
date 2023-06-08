@@ -1,0 +1,141 @@
+@mixin title-pages {
+	font-family: $satoshi-font-family;
+	font-weight: 900;
+	line-height: 125%; // 60px
+	@include smoothValue(
+		"font-size",
+		40px,
+		60px,
+		$breakpoint-xs,
+		$breakpoint-lg-3
+	);
+	@include smoothValue(
+		"line-height",
+		106.5%,
+		125%,
+		$breakpoint-xs,
+		$breakpoint-lg-3
+	);
+	@include maxScreen($breakpoint-md-4) {
+		line-height: 106.5%;
+		margin-bottom: 17px;
+	}
+}
+
+@mixin subtitle-pages {
+	font-family: $satoshi-font-family;
+	font-weight: 900;
+	line-height: 125%;
+	@include smoothValue(
+		"font-size",
+		36px,
+		60px,
+		$breakpoint-xs,
+		$breakpoint-lg-3
+	);
+	@include smoothValue(
+		"line-height",
+		107%,
+		125%,
+		$breakpoint-xs,
+		$breakpoint-lg-3
+	);
+	@include maxScreen($breakpoint-md-4) {
+		line-height: 107%;
+		margin-bottom: 17px;
+	}
+}
+
+@mixin section-title {
+	font-family: $satoshi-font-family;
+	font-weight: 700;
+	line-height: 135%; 
+	@include smoothValue(
+		"font-size",
+		36px,
+		48px,
+		$breakpoint-xs,
+		$breakpoint-lg-3
+	);
+	@include smoothValue(
+		"line-height",
+		106%,
+		135%,
+		$breakpoint-xs,
+		$breakpoint-lg-3
+	);
+	
+	@include maxScreen($breakpoint-md-4) {
+		line-height: 106%;
+		margin-bottom: 17px !important;
+	}
+}
+
+
+@mixin text-t1 {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 120%; // 24px
+	@include smoothValue(
+		"font-size",
+		14px,
+		20px,
+		$breakpoint-xs,
+		$breakpoint-lg-3
+	);
+}
+
+@mixin text-t2 {
+	font-family: $switzer-font-family;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 135%; // 27px
+	@include maxScreen($breakpoint-lg-3) {
+		@include smoothValue(
+			"font-size",
+			18px,
+			20px,
+			$breakpoint-md,
+			$breakpoint-lg-3
+		);
+	}
+	@include maxScreen($breakpoint-md) {
+		@include smoothValue(
+			"font-size",
+			24px,
+			25px,
+			$breakpoint-xs,
+			$breakpoint-lg-4
+		);
+		line-height: 132%;
+		
+	}
+}
+
+@mixin text-t3 {
+	font-family: $switzer-font-family;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 150%; 
+	@include maxScreen($breakpoint-sm) {
+		line-height: 132%;
+	}
+	@include maxScreen($breakpoint-md-4) {
+		@include smoothValue(
+			"font-size",
+			20px,
+			20px,
+			$breakpoint-xs,
+			$breakpoint-lg-4
+		);
+		line-height: 132%;
+		
+	}
+}
+
+
+@mixin button-t1 {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+}

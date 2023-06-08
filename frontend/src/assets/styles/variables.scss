@@ -1,0 +1,45 @@
+// FONTS
+$default-font-family: "switzer",Arial,sans-serif;;
+$switzer-font-family: "switzer",Arial,sans-serif;
+$satoshi-font-family: "satoshi",Arial,sans-serif;
+
+
+// COLORS
+
+$main-color : #031441;
+$main-color-light : #031441;
+$background-color : #f5f5f5;
+$light-color : #fff;
+$border-color : #e0e0e0;
+$lock-color : red;
+
+
+// ANIMATIONS
+$small-animation: all 0.15s ease-out;
+$medium-animation: all 0.25s ease-out;
+$long-animation: all 0.35s ease-out;
+
+// OTHER
+$navbar-width: 18.45rem;
+
+// MEDIA QUERIES
+$breakpoint-xl: 2560px;
+$breakpoint-lg: 1920px;
+$breakpoint-lg-2: 1600px;
+$breakpoint-lg-3: 1440px;
+$breakpoint-lg-4: 1280px;
+
+$breakpoint-md: 1024px;
+$breakpoint-md-2: 992px;
+$breakpoint-md-3: 768px;
+$breakpoint-md-4: 640px;
+
+$breakpoint-sm: 576px;
+$breakpoint-xs: 393px;
+
+
+// SPACING 
+$spacing-list-md: 3px;
+$page-padding-top-xs: 134px;
+$page-title-padding-bottom-lg: 13px;
+$mobile-nav-height: 60px;

@@ -1,0 +1,30 @@
+{
+  "name": "mcn-web-wallet",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "proxy": "http://localhost:4001/",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@types/node": "^18.15.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.9.0",
+    "react-router-dom": "^6.12.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "sass": "^1.62.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.0",
+    "vite-plugin-node-polyfills": "^0.7.0"
+  }
+}

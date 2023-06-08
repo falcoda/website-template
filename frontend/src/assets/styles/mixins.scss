@@ -1,0 +1,50 @@
+@use "sass:math";
+
+@function strip-unit($number) {
+	@if (type-of($number) == "number" and not unitless($number)) {
+		@return math.div($number, ($number * 0 + 1));
+	}
+	@return $number;
+}
+
+@mixin smoothValue(
+	$prop,
+	$min,
+	$max,
+	$minViewPort: $mobile,
+	$maxViewPort: $desktop,
+	$minScreen: true
+) {
+	@if $minScreen {
+		@media (min-width: $minViewPort) {
+			#{$prop}: $max;
+		}
+	}
+	@media (min-width: $minViewPort) and (max-width: ($maxViewPort - 1)) {
+		#{$prop}: calc(
+			#{$min} + #{strip-unit($max - $min)} *
+				(
+					(100vw - #{$minViewPort}) /
+						(#{strip-unit($maxViewPort - $minViewPort)})
+				)
+		);
+	}
+	@media (max-width: ($minViewPort - 1)) {
+		#{$prop}: $min;
+	}
+}
+
+// Media
+// Define the mixin for a minimum screen width
+@mixin minScreen($size) {
+	@media only screen and (min-width: $size) {
+		@content;
+	}
+}
+
+// Define the mixin for a maximum screen width
+@mixin maxScreen($size) {
+	@media only screen and (max-width: $size) {
+		@content;
+	}
+}

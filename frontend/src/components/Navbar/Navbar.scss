@@ -1,0 +1,164 @@
+/* src/css/Navbar/Navbar.css */
+
+.navbar {
+  background-color: $main-color;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: fixed;
+  width: $navbar-width;
+  z-index: 100;
+  color: $light-color;
+}
+
+.navbar-toggler {
+  display: none;
+}
+
+.navbar-collapse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 12rem;
+}
+
+.nav-link {
+  color: $light-color;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  width: 10rem;
+}
+
+.nav-item {
+  display: flex;
+  height: 3rem;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-item:hover {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(335%) hue-rotate(88deg) brightness(94%) contrast(87%);
+}
+
+.nav-item.active {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(335%) hue-rotate(88deg) brightness(94%) contrast(87%);
+}
+
+.link-text {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  margin-left: 1.25rem;
+  visibility: visible;
+  opacity: 1;
+  display: inline-block;
+}
+
+.navLogo {
+  width: 20px;
+}
+
+.navTitleDiv {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  place-items: center;
+  margin-bottom: 9rem;
+  margin-top: 3rem;
+}
+
+.navTitle {
+  width: 10rem;
+  grid-area: 1 / 2 / 2 / 3;
+  padding-left: 9px;
+}
+
+.navTitleIcon {
+  display: flex;
+  justify-content: center;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+/* Ajouter ces lignes à la fin du fichier */
+
+@media screen and (max-width: 991px) {
+  .navbar {
+    flex-direction: row;
+    height: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .navbar-toggler {
+    margin-left: auto;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    order: 2;
+    display: flex;
+    align-items: top;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    outline: none;
+  }
+  
+  .navbar-collapse {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s;
+  }
+  
+
+  .navbar-collapse.show {
+    max-height: 400px;
+  }
+
+  .navbar-nav {
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-item {
+    margin: 1rem;
+    width: 100%; 
+    display: flex;
+    height: 1rem;
+    justify-content: center; 
+  }
+  .nav-item:first-child {
+    margin-top: 1rem; 
+  }
+  .navTitleDiv {
+    /* display: none; */
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  @keyframes growDown {
+    0% {
+      max-height: 0;
+    }
+    100% {
+      max-height: 400px; 
+    }
+  }
+}

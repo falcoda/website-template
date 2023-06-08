@@ -1,0 +1,44 @@
+
+
+version: '2'
+
+services:
+  
+  wallet:
+    image: node:18.15.0
+    container_name: wallet
+    restart: unless-stopped
+    networks:
+      docker_slg-network:
+        ipv4_address: 192.168.10.10
+    volumes:
+      - ../:/var/www/backend
+    command: bash -c "cd /var/www/backend && node index.js"
+
+
+  caddy:
+    depends_on:
+      - wallet   
+    image: caddy:2.3.0
+    container_name: slg-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/caddy_data:/data
+      - ./caddy/caddy_config:/config
+    networks:
+      docker_slg-network:
+        ipv4_address: 192.168.10.7 
+
+#--------------------
+
+networks:
+    slg-network:
+      driver: bridge
+      ipam:
+        config:
+          - subnet: 192.168.10.0/24
+            gateway: 192.168.10.1

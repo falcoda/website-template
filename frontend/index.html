@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCN Web Wallet</title>
+    <meta name="description" content="Juneo is a secure and user-friendly web wallet for managing cryptocurrencies on multiple blockchains. With Juneo, you can easily store, send, and receive your digital assets, delegate your tokens, and view your transaction history in one convenient location."/>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>window.global = window;</script>
+    <script type="module">
+        import { Buffer } from "buffer"; 
+      
+        window.Buffer = Buffer;
+    </script>
+    <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/1719f6e2ce4f1ffc474689134edcb1d9.js"></script>
+  </body>
+</html>
