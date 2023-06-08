@@ -1,11 +1,7 @@
 {
-  email corentda@hotmail.fr
+  email example@gmail.com
 }
 
-www.mcnwallet.io, mcnwallet.io {
+www.myDomain.com, myDomain.com {
   reverse_proxy 192.168.10.10:4001
-}
-
-www.wallet.mcnpoc5.xyz, wallet.mcnpoc5.xyz {
-  reverse_proxy 192.168.10.100:4001
 }
