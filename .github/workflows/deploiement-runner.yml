@@ -33,11 +33,11 @@ jobs:
         working-directory: backend
         run: npm install
       
-      - name: Copy backend to walletRunner
-        run: cp -R backend/* /home/corentin/walletRunner
+      - name: Copy backend to www
+        run: cp -R backend/* /home/user/www
       
       - name: Restart Services and Deploy
-        working-directory: /home/corentin/walletRunner
+        working-directory: /home/user/www
         run : | 
           ls
           cd docker    
