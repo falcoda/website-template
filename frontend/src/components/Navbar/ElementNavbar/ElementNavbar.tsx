@@ -1,7 +1,5 @@
-import '../Navbar.scss';
-import React from 'react';
-import { NavLink, useMatch } from "react-router-dom";
-
+import React, { useEffect, useState } from 'react';
+import { NavLink, useMatch } from 'react-router-dom';
 interface ElementNavBarProps {
   href: string;
   text: string;
@@ -10,8 +8,28 @@ interface ElementNavBarProps {
   onLinkClick?: () => void;
 }
 
-const ElementNavBar: React.FC<ElementNavBarProps> = ({ href, text, icon, className, onLinkClick }) => {
+const ElementNavBar: React.FC<ElementNavBarProps> = ({
+  href,
+  text,
+  icon,
+  className,
+  onLinkClick,
+}) => {
   const match = useMatch(href);
+  const [IconComponent, setIconComponent] = useState<React.FC<{
+    className?: string;
+  }> | null>(null);
+
+  useEffect(() => {
+    console.log('icon', icon);
+    import(`../../../assets/svg/navbar/${icon}.svg`)
+      .then((module) => {
+        setIconComponent(() => module.ReactComponent);
+      })
+      .catch((error) => {
+        console.error('Error loading SVG icon:', error);
+      });
+  }, [icon]);
 
   return (
     <li className={`nav-item ${className} ${match ? 'active' : ''}`}>
@@ -19,11 +37,11 @@ const ElementNavBar: React.FC<ElementNavBarProps> = ({ href, text, icon, classNa
         to={href}
         className={`nav-link `}
         onClick={onLinkClick}
-        aria-current="page"
-        end={href === "/"}
+        aria-current='page'
+        end={href === '/'}
       >
-        <img src={`./svg/${icon}.svg`} alt={`logo ${icon}`} className="navLogo" />
-        <span className="link-text">{text}</span>
+        {IconComponent && <IconComponent className='navLogo' />}
+        <span className='link-text'>{text}</span>
       </NavLink>
     </li>
   );
