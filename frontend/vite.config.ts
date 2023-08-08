@@ -1,9 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { nodePolyfills } from 'vite-plugin-node-polyfills'
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  plugins: [nodePolyfills(),react()],
+  plugins: [svgr(), nodePolyfills(), react()],
   server: {
     port: 3001,
     proxy: {
@@ -18,8 +19,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      'buffer': 'buffer'
-    }
+      buffer: 'buffer',
+    },
   },
   css: {
     preprocessorOptions: {
@@ -30,8 +31,7 @@ export default defineConfig({
       },
     },
     modules: {
-        generateScopedName: "[name]__[local]__[hash:base64:5]"
-    }
+      generateScopedName: '[name]__[local]__[hash:base64:5]',
+    },
   },
-
-})
+});
