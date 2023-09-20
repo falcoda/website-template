@@ -1,141 +1,355 @@
 @mixin title-pages {
-	font-family: $satoshi-font-family;
-	font-weight: 900;
-	line-height: 125%; // 60px
-	@include smoothValue(
-		"font-size",
-		40px,
-		60px,
-		$breakpoint-xs,
-		$breakpoint-lg-3
-	);
-	@include smoothValue(
-		"line-height",
-		106.5%,
-		125%,
-		$breakpoint-xs,
-		$breakpoint-lg-3
-	);
-	@include maxScreen($breakpoint-md-4) {
-		line-height: 106.5%;
-		margin-bottom: 17px;
-	}
+  font-family: $satoshi-font-family;
+  font-weight: 900;
+  line-height: 125%; // 60px
+  @include smoothValue(
+    "font-size",
+    40px,
+    60px,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+  @include smoothValue(
+    "line-height",
+    106.5%,
+    125%,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+  @include maxScreen($breakpoint-md-4) {
+    line-height: 106.5%;
+    margin-bottom: 17px;
+  }
 }
 
 @mixin subtitle-pages {
-	font-family: $satoshi-font-family;
-	font-weight: 900;
-	line-height: 125%;
-	@include smoothValue(
-		"font-size",
-		36px,
-		60px,
-		$breakpoint-xs,
-		$breakpoint-lg-3
-	);
-	@include smoothValue(
-		"line-height",
-		107%,
-		125%,
-		$breakpoint-xs,
-		$breakpoint-lg-3
-	);
-	@include maxScreen($breakpoint-md-4) {
-		line-height: 107%;
-		margin-bottom: 17px;
-	}
+  font-family: $satoshi-font-family;
+  font-weight: 900;
+  line-height: 125%;
+  @include smoothValue(
+    "font-size",
+    36px,
+    60px,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+  @include smoothValue(
+    "line-height",
+    107%,
+    125%,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+  @include maxScreen($breakpoint-md-4) {
+    line-height: 107%;
+    margin-bottom: 17px;
+  }
 }
 
 @mixin section-title {
-	font-family: $satoshi-font-family;
-	font-weight: 700;
-	line-height: 135%; 
-	@include smoothValue(
-		"font-size",
-		36px,
-		48px,
-		$breakpoint-xs,
-		$breakpoint-lg-3
-	);
-	@include smoothValue(
-		"line-height",
-		106%,
-		135%,
-		$breakpoint-xs,
-		$breakpoint-lg-3
-	);
-	
-	@include maxScreen($breakpoint-md-4) {
-		line-height: 106%;
-		margin-bottom: 17px !important;
-	}
+  font-family: $satoshi-font-family;
+  font-weight: 700;
+  line-height: 135%;
+  @include smoothValue(
+    "font-size",
+    36px,
+    48px,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+  @include smoothValue(
+    "line-height",
+    106%,
+    135%,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+
+  @include maxScreen($breakpoint-md-4) {
+    line-height: 106%;
+    margin-bottom: 17px !important;
+  }
 }
 
+@mixin modal-title {
+  // modal title
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+@mixin title-t1 {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin title-t2 {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin title-t3 {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin title-t4 {
+  // use for header buttons
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  @include smoothValue(
+    "font-size",
+    14px,
+    16px,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+}
+
+@mixin title-t5 {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 40px;
+}
+@mixin title-t6 {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  @include smoothValue(
+    "font-size",
+    16px,
+    20px,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+}
+@mixin title-t7 {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  @include smoothValue(
+    "font-size",
+    30px,
+    48px,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+}
+@mixin title-t8 {
+  // cart title wallet connect/create
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 38px;
+  @include smoothValue(
+    "font-size",
+    20px,
+    26px,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+  @include smoothValue(
+    "line-height",
+    26px,
+    38px,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+}
 
 @mixin text-t1 {
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 120%; // 24px
-	@include smoothValue(
-		"font-size",
-		14px,
-		20px,
-		$breakpoint-xs,
-		$breakpoint-lg-3
-	);
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 @mixin text-t2 {
-	font-family: $switzer-font-family;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 135%; // 27px
-	@include maxScreen($breakpoint-lg-3) {
-		@include smoothValue(
-			"font-size",
-			18px,
-			20px,
-			$breakpoint-md,
-			$breakpoint-lg-3
-		);
-	}
-	@include maxScreen($breakpoint-md) {
-		@include smoothValue(
-			"font-size",
-			24px,
-			25px,
-			$breakpoint-xs,
-			$breakpoint-lg-4
-		);
-		line-height: 132%;
-		
-	}
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 @mixin text-t3 {
-	font-family: $switzer-font-family;
-	font-weight: 300;
-	font-size: 20px;
-	line-height: 150%; 
-	@include maxScreen($breakpoint-sm) {
-		line-height: 132%;
-	}
-	@include maxScreen($breakpoint-md-4) {
-		@include smoothValue(
-			"font-size",
-			20px,
-			20px,
-			$breakpoint-xs,
-			$breakpoint-lg-4
-		);
-		line-height: 132%;
-		
-	}
+  // summary title in send + cross
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
 }
 
+@mixin text-t4 {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
 
-@mixin button-t1 {
-	font-weight: 700;
-	font-size: 16px;
-	line-height: 19px;
+@mixin text-t5 {
+  // modal onboarding, error onboarding
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@mixin text-t6 {
+  // footer links
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+@mixin text-t7 {
+  // selected node into delegate
+  // label into send page
+  // transfer fee label
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+@mixin text-t8 {
+  // button delegate to node
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  @include smoothValue("font-size", 10px, 14px, $breakpoint-xs, $breakpoint-sm);
+}
+
+@mixin text-t9 {
+  // text for input in rangeSlider
+  // bouttons in buttonSwitcher
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  @include smoothValue("font-size", 11px, 14px, $breakpoint-xs, $breakpoint-sm);
+}
+
+@mixin text-t10 {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  @include smoothValue(
+    "font-size",
+    10px,
+    12px,
+    $breakpoint-xs,
+    $breakpoint-lg-2
+  );
+}
+
+@mixin text-t11 {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  @include smoothValue(
+    "font-size",
+    10px,
+    12px,
+    $breakpoint-lg-2,
+    $breakpoint-lg
+  );
+}
+
+@mixin text-t12 {
+  // use for stacke end and start date label
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+@mixin text-t13 {
+  // use for stacke end and start date span
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+@mixin text-t14 {
+  // label for amount component
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+@mixin text-t15 {
+  // cart title wallet connect/create
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+// Typo for terms and privacy :
+@mixin title-privacy {
+  font-weight: 900;
+  line-height: 125%;
+  @include smoothValue(
+    "font-size",
+    36px,
+    60px,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+  @include smoothValue(
+    "line-height",
+    107%,
+    125%,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+  @include maxScreen($breakpoint-md-4) {
+    line-height: 107%;
+    margin-bottom: 17px;
+  }
+}
+
+@mixin subtitle-privacy {
+  font-family: $satoshi-font-family;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 122%; // 44px
+  @include smoothValue(
+    "font-size",
+    25px,
+    36px,
+    $breakpoint-xs,
+    $breakpoint-lg-3
+  );
+  @include maxScreen($breakpoint-md-4) {
+    line-height: 106%;
+  }
+}
+
+@mixin button-xs {
+  font-size: 12px;
+  color: $primary-font;
+}
+
+@mixin button-s {
+  @include text-t9;
+  color: $primary-font;
 }

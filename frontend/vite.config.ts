@@ -1,25 +1,20 @@
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
-import { nodePolyfills } from 'vite-plugin-node-polyfills';
-import svgr from 'vite-plugin-svgr';
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
+import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   plugins: [svgr(), nodePolyfills(), react()],
   server: {
     port: 3001,
-    proxy: {
-      '/api': {
-        target: 'https://mcnscan.io/',
-        changeOrigin: true,
-      },
-    },
   },
   build: {
-    outDir: 'build',
+    sourcemap: true,
+    outDir: "build",
   },
   resolve: {
     alias: {
-      buffer: 'buffer',
+      buffer: "buffer",
     },
   },
   css: {
@@ -31,7 +26,7 @@ export default defineConfig({
       },
     },
     modules: {
-      generateScopedName: '[name]__[local]__[hash:base64:5]',
+      generateScopedName: "[name]__[local]__[hash:base64:5]",
     },
   },
 });

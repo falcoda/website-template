@@ -1,9 +1,50 @@
 .App {
-  background-color: #F2F5FF;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+  min-height: 100%;
+  height: 100%;
   overflow-x: hidden !important;
-  font-family: 'Tahoma';
-  
+  overflow: hidden;
+  font-family: "Inter";
+
+  @include maxScreen($breakpoint-lg-2) {
+    overflow-y: auto !important;
+  }
+}
+.mainHeader {
+  height: fit-content;
+}
+.mainSection {
+  margin-left: calc($navbar-width + $padding-md-2);
+  margin-right: $padding-md-2;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  @include maxScreen($breakpoint-lg-2) {
+    height: auto;
+  }
+  @include maxScreen($breakpoint-lg-4) {
+    margin-left: 15px;
+  }
+  @include maxScreen($breakpoint-md-2 + 1) {
+    margin-left: $link-padding-mobile-2;
+  }
+}
+#root {
+  height: 100%;
+  @include maxScreen($breakpoint-lg) {
+    overflow-y: auto;
+  }
+  @include maxScreen($breakpoint-sm) {
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+.app-container {
+  height: 100%;
 }
 
 .mainContent {
@@ -15,35 +56,7 @@
   margin-left: -4rem;
 }
 
-
-.CookieConsent{
-  z-index: 100000 !important;
-}
-
-/* For all page right to the navbar */
-
-.mainContainerDiv{
-  padding: 1rem;
-  border: 1px solid #e0e0e0;
-  background-color: #fff!important;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,.1);
-  min-height: 30rem;
-}
-
-.mainContainerHeader{
-  display: flex; 
-  justify-content: start;
-  align-items: center;
-  padding: 10px;
-}
-.mainContainerHeader h1 { 
-  font-size: 30px;
-  margin: 0;
-}
-
 @media screen and (max-width: 991px) {
-
   .mainContainer {
     margin-left: 0;
   }

@@ -1,0 +1,94 @@
+.desktopNavbar {
+  background-color: $main-color;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: fixed;
+  width: $navbar-width;
+  z-index: 110;
+
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: $main-color;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding: 60px 20px 0px 20px;
+
+    .nav-link {
+      color: $secondary-font-2;
+      border-radius: $radius-medium;
+      border: 1px solid $nav-dark-blue;
+      row-gap: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      text-decoration: none;
+      width: 100%;
+      padding: 10px 0 10px 20px;
+      &:hover {
+        background-color: $blue-opacity;
+        border-radius: $radius-medium;
+      }
+    }
+
+    .nav-item {
+      display: flex;
+      height: 3rem;
+      border-radius: $radius-medium;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+      width: 100%;
+
+      &.active {
+        background-color: $light-blue;
+        border-radius: $radius-medium;
+        .nav-link {
+          color: $light-color !important;
+          border-radius: $radius-medium;
+        }
+        .navLogo {
+          filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+            saturate(7476%) hue-rotate(357deg) brightness(108%) contrast(108%);
+        }
+      }
+    }
+
+    .link-text {
+      @include text-t5;
+      margin-left: 1.25rem;
+      visibility: visible;
+      opacity: 1;
+      display: inline-block;
+    }
+  }
+
+  .navTitleDiv {
+    margin-bottom: 60px;
+    color: $light-color;
+
+    .navTitle {
+      grid-area: 1 / 2 / 2 / 3;
+      padding-left: 9px;
+      @include maxScreen($breakpoint-lg-4) {
+        display: none;
+      }
+    }
+
+    .navTitleIcon {
+      display: flex;
+      justify-content: center;
+      grid-area: 1 / 1 / 2 / 2;
+    }
+  }
+}

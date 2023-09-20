@@ -1,20 +1,13 @@
-import React from 'react';
+import "./Home.scss";
 
-import './Home.scss';
+import React from "react";
 
-interface HomeProps {
-}
+interface HomeProps {}
 
-const Home: React.FC<HomeProps> = ({ }) => {
-  
-
-
+const Home: React.FC<HomeProps> = ({}) => {
   return (
-    <div className="mainContainer"> 
-      <div className='homePageDiv'>
-        HOME
-        
-      </div>
+    <div className="root">
+      <div className="homePageDiv">HOME</div>
     </div>
   );
 };

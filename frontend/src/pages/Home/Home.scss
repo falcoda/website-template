@@ -1,0 +1,6 @@
+.root {
+  @include container;
+  .homePageDiv {
+    @include containerContent;
+  }
+}

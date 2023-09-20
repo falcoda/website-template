@@ -1,42 +1,30 @@
-// App.tsx
+/// <reference types="vite-plugin-svgr/client" />
 
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
+import "./App.scss";
 
-import './App.scss';
+import React from "react";
+import { Toaster } from "react-hot-toast";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { Toaster } from 'react-hot-toast';
-
-
-import Navbar from './components/Navbar/Navbar';
-import Home from './pages/Home/Home';
-
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home/Home";
 
 function App() {
-  
-  
-
   return (
     <div className="App">
-      
-        <Router>
-            <header>
-              <Navbar/>   
-            </header>
-          
-          
-            <Routes>
-                
-                <>                
-                  <Route path="/" element={<Home/>} />   
-                  
-                </>
-            </Routes>
-          
-        
-        </Router>
-        <Toaster position="bottom-right" reverseOrder={false}/>
-        
+      <Router>
+        <header>
+          <Navbar />
+        </header>
+        <section className="mainSection">
+          <Routes>
+            <>
+              <Route path="/" element={<Home />} />
+            </>
+          </Routes>
+        </section>
+      </Router>
+      <Toaster position="bottom-right" reverseOrder={false} />
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { NavLink, useMatch } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { NavLink, useMatch } from "react-router-dom";
 interface ElementNavBarProps {
   href: string;
   text: string;
@@ -21,27 +21,26 @@ const ElementNavBar: React.FC<ElementNavBarProps> = ({
   }> | null>(null);
 
   useEffect(() => {
-    console.log('icon', icon);
     import(`../../../assets/svg/navbar/${icon}.svg`)
       .then((module) => {
         setIconComponent(() => module.ReactComponent);
       })
       .catch((error) => {
-        console.error('Error loading SVG icon:', error);
+        console.log("Error loading SVG icon:", error);
       });
   }, [icon]);
 
   return (
-    <li className={`nav-item ${className} ${match ? 'active' : ''}`}>
+    <li className={`nav-item ${className} ${match ? "active" : ""}`}>
       <NavLink
         to={href}
         className={`nav-link `}
         onClick={onLinkClick}
-        aria-current='page'
-        end={href === '/'}
+        aria-current="page"
+        end={href === "/"}
       >
-        {IconComponent && <IconComponent className='navLogo' />}
-        <span className='link-text'>{text}</span>
+        {IconComponent && <IconComponent className="navLogo" />}
+        <span className="link-text">{text}</span>
       </NavLink>
     </li>
   );

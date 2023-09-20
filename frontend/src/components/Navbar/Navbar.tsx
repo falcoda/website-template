@@ -1,41 +1,21 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { RxHamburgerMenu } from 'react-icons/rx';
+import React from "react";
 
-import ElementNavBar from './ElementNavbar/ElementNavbar';
+import { breakpoints } from "../../config/Breakpoints";
+import useWindowWidth from "../../hooks/useWindowWidth";
+import DesktopNavbar from "./DesktopNavbar/DesktopNavbar";
+import MobileNavbar from "./MobileNavbar/MobileNavbar";
 
-import './Navbar.scss';
-interface NavbarProps {}
-
-const Navbar: React.FC<NavbarProps> = ({}) => {
-  const [collapsed, setCollapsed] = useState(false);
-
-  const toggleNavbar = () => {
-    setCollapsed(!collapsed);
-  };
+const Navbar: React.FC = () => {
+  const { windowWidth } = useWindowWidth();
 
   return (
-    <nav className='navbar' role='navigation' aria-label='Site Navigation'>
-      <button className='navbar-toggler' type='button'>
-        <RxHamburgerMenu onClick={toggleNavbar} />
-      </button>
-      <div className={`navbar-collapse ${collapsed ? 'show' : ''}`}>
-        <ul className='navbar-nav'>
-          <li className=''>
-            <NavLink to='/' className='navTitleDiv'>
-              TITRE
-            </NavLink>
-          </li>
-          <ElementNavBar
-            href='/'
-            text='Home'
-            icon='home'
-            className='Home'
-            onLinkClick={() => setCollapsed(false)}
-          />
-        </ul>
-      </div>
-    </nav>
+    <div>
+      {windowWidth > breakpoints["breakpoint-lg-4"] ? (
+        <DesktopNavbar />
+      ) : (
+        <MobileNavbar />
+      )}
+    </div>
   );
 };
 

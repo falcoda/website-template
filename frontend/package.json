@@ -1,31 +1,39 @@
 {
-  "name": "website-template",
+  "name": "website_template",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.0",
   "type": "module",
-  "proxy": "http://localhost:4001/",
+  "author": "Dallenogare Corentin",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "npx cypress run",
+    "lint": "eslint --fix **/*.{ts,tsx}"
   },
   "dependencies": {
-    "@types/node": "^18.15.10",
+    "@types/node": "^20.5.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hot-toast": "^2.4.0",
-    "react-icons": "^4.9.0",
-    "react-router-dom": "^6.12.0"
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.15.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react": "^3.1.0",
-    "sass": "^1.62.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.1.6",
-    "vite": "^4.1.0",
-    "vite-plugin-node-polyfills": "^0.7.0",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@vitejs/plugin-react": "^4.0.4",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "prettier": "^3.0.3",
+    "sass": "^1.66.1",
+    "typescript": "^4.9.5",
+    "vite": "^4.4.9",
+    "vite-plugin-node-polyfills": "^0.12.0",
     "vite-plugin-svgr": "^3.2.0"
   }
 }

@@ -1,18 +1,79 @@
 // FONTS
-$default-font-family: "switzer",Arial,sans-serif;;
-$switzer-font-family: "switzer",Arial,sans-serif;
-$satoshi-font-family: "satoshi",Arial,sans-serif;
+$default-font-family: "switzer", Arial, sans-serif;
+$switzer-font-family: "switzer", Arial, sans-serif;
+$satoshi-font-family: "satoshi", Arial, sans-serif;
 
+// COLORS OLD
 
-// COLORS
+$main-color: #051849;
+$main-color-light: #051849;
+$light-blue: #0c90ff;
+$light-blue-hover: #45affc;
+$checkbox-background: #1a2d5c;
+$black: #000000;
 
-$main-color : #031441;
-$main-color-light : #031441;
-$background-color : #f5f5f5;
-$light-color : #fff;
-$border-color : #e0e0e0;
-$lock-color : red;
+$lock-color: #f25050;
+$green-color: #38c769;
+$main-orange: #ff8e00;
 
+$background-color: #f2f3f6;
+$background-color-2: #f7f8f9;
+$light-color: #fff;
+
+// COLORS NEWS
+$primary-font: #2b2b2b;
+$secondary-font: #7c7c7c;
+$secondary-font-2: #b4bac8;
+$tertiary-font: #676768;
+$hover-color-selects: #677cb9;
+$blue-opacity: rgba(12, 144, 255, 0.2);
+$disabled-button-light: #f7f8fa;
+$input-field-color: rgba(141, 142, 147, 0.2);
+$buton-onboarding-color: rgba(12, 144, 255, 0.6);
+$nav-dark-blue: #505d80;
+
+$border-color: rgba(5, 24, 73, 0.1);
+$border-color-2: rgba(103, 124, 185, 0.2);
+
+// RADIUS
+$radius-extra-small: 3px;
+$radius-small: 5px;
+$radius-medium-small: 6px;
+$radius-medium: 10px;
+$radius-large: 15px;
+$radius-extra-large: 20px;
+$radius-extra-large-2: 25px;
+
+// SPACING
+$spacing-list-md: 3px;
+$spacing-smal-card: 10px;
+
+$padding-xxxs: 4px;
+$padding-xxs: 7px;
+$padding-xs: 10px;
+$padding-sm: 14px;
+$padding-md: 20px;
+$padding-md-2: 25px;
+$padding-lg: 30px;
+$padding-lg-2: 35px;
+$padding-xl: 40px;
+$padding-xl-2: 45px;
+$padding-xl-3: 50px;
+
+$link-padding-mobile: $padding-md-2;
+$link-padding-mobile-2: 15px;
+
+$margin-xxxs: 4px;
+$margin-xxs: 7px;
+$margin-xs: 10px;
+$margin-sm: 14px;
+$margin-md: 20px;
+$margin-md-2: 25px;
+$margin-lg: 30px;
+$margin-lg-2: 35px;
+$margin-xl: 40px;
+$margin-xl-2: 45px;
+$margin-xl-3: 50px;
 
 // ANIMATIONS
 $small-animation: all 0.15s ease-out;
@@ -20,7 +81,11 @@ $medium-animation: all 0.25s ease-out;
 $long-animation: all 0.35s ease-out;
 
 // OTHER
-$navbar-width: 18.45rem;
+$navbar-width: 256px;
+$navbar-height-sm: 60px;
+$transactionBar-width: 339px;
+$footerHeight: 30px;
+$border-onbloarding: 1px solid rgba(12, 144, 255, 0.3);
 
 // MEDIA QUERIES
 $breakpoint-xl: 2560px;
@@ -36,10 +101,3 @@ $breakpoint-md-4: 640px;
 
 $breakpoint-sm: 576px;
 $breakpoint-xs: 393px;
-
-
-// SPACING 
-$spacing-list-md: 3px;
-$page-padding-top-xs: 134px;
-$page-title-padding-bottom-lg: 13px;
-$mobile-nav-height: 60px;
