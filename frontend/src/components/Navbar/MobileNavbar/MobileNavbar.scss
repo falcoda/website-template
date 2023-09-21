@@ -49,7 +49,7 @@
       border: none;
       padding-left: 0;
       text-align: left;
-      @include text-t2;
+      @include text-t1;
       margin-top: $margin-md;
       @include minScreen($breakpoint-md-2 + 1) {
         display: none;
@@ -109,7 +109,7 @@
     }
 
     .link-text {
-      @include text-t5;
+      @include text-t4;
       margin-left: 1.25rem;
       visibility: visible;
       opacity: 1;
@@ -125,7 +125,7 @@
     color: $light-color;
     span {
       @include bubleGreen();
-      @include text-t4;
+      @include text-t3;
     }
     sup {
       background-color: $main-orange;

@@ -56,64 +56,6 @@
   }
 }
 
-@mixin bubleGreen() {
-  &:before {
-    content: "";
-    display: inline-block;
-    height: 6px;
-    width: 6px;
-    margin-left: 5px;
-    background-color: $green-color;
-    border-radius: 50%;
-    position: relative;
-    top: -2px;
-    left: -5px;
-  }
-}
-
-@mixin cardShadow($margins) {
-  background-color: $light-color !important;
-  border-radius: $radius-medium;
-  margin: $margins;
-  padding: 20px;
-  border: 0.25px solid $border-color;
-  @include maxScreen($breakpoint-lg-2) {
-    margin-right: 0;
-  }
-  @include maxScreen($breakpoint-md-2) {
-    padding: $padding-xs;
-    margin-right: $link-padding-mobile-2;
-    margin-left: $link-padding-mobile-2;
-  }
-}
-
-@mixin elevation1($radius) {
-  border: none;
-  border-radius: $radius;
-  background: $light-color;
-  box-shadow: 0px 1.6366515159606934px 3.2733030319213867px 0px
-    rgba(5, 24, 73, 0.2);
-  &:hover {
-    box-shadow: 0px 2.75px 6.875000476837158px 0px rgba(5, 24, 73, 0.35);
-  }
-  &:active {
-    border: 0.688px solid var(--secondary-font, #7c7c7c);
-  }
-}
-
-@mixin elevation2($radius) {
-  border: none;
-  border-radius: $radius;
-  background: $light-color;
-  box-shadow: 0px 0px 5px 0px rgba(5, 24, 73, 0.2);
-}
-
-@mixin elevation3($radius) {
-  border: 0.25px solid $border-color;
-  background: $light-color;
-  border-radius: $radius;
-}
-
 @mixin container {
   margin-top: $padding-md;
   transition: 300ms ease-in-out;
@@ -157,7 +99,6 @@
   }
 }
 
-// for send and cross pages
 @mixin formsCards($grid-template-rows) {
   display: grid;
   align-items: center;
@@ -180,7 +121,7 @@
 
     label,
     span {
-      @include text-t7;
+      @include text-t5;
       color: $primary-font;
       width: 250px;
     }
@@ -232,7 +173,7 @@
       $secondary-font,
       $disabled-button-light
     );
-    @include text-t2;
+    @include text-t1;
   }
 }
 
@@ -254,7 +195,7 @@
   color: $text-color;
   width: $width;
   height: $height;
-  @include text-t3;
+  @include text-t2;
 
   cursor: pointer;
   &:hover {
@@ -273,20 +214,6 @@
     background-color: $disabled-background-color;
     // border: $border-onbloarding;
   }
-}
-
-@mixin button-2($radius, $background-color, $text-color, $width, $height) {
-  border: none;
-  border-radius: $radius;
-  background: $background-color;
-  color: $text-color;
-  width: $width;
-  height: $height;
-  padding: 0;
-  text-align: left;
-  @include text-t3;
-
-  cursor: pointer;
 }
 
 @mixin scrollbar {
