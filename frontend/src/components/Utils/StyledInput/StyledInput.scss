@@ -1,0 +1,69 @@
+.styledInput {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  // margin-bottom: 16px;
+
+  label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: $primary-font;
+    font-weight: 700;
+    line-height: 125%;
+    @include smoothValue(
+      "font-size",
+      15px,
+      20px,
+      $breakpoint-xs,
+      $breakpoint-lg
+    );
+  }
+
+  input,
+  textarea {
+    @include inputStyle;
+  }
+  textarea {
+    width: 440px;
+    height: 120px;
+  }
+  .inputGroup {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    color: $light-blue;
+
+    @include inputStyle;
+    padding: 0;
+    flex: 1;
+
+    input {
+      width: 100%;
+      height: 100%;
+      border-radius: none;
+      background-color: transparent;
+      padding: $padding-xxs;
+      height: 36px;
+      border: none;
+    }
+
+    .inputHideElement {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      position: absolute;
+      right: 3px;
+      top: 0;
+      bottom: 0;
+    }
+  }
+}
+.accountingFileInput {
+  width: 400px;
+  @include maxScreen($breakpoint-xs) {
+    width: 100% !important;
+  }
+}

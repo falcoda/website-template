@@ -116,26 +116,6 @@
       display: inline-block;
     }
   }
-  .navFooter {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: $link-padding-mobile 20px 160px $link-padding-mobile;
-    color: $light-color;
-    span {
-      @include bubleGreen();
-      @include text-t3;
-    }
-    sup {
-      background-color: $main-orange;
-      font-size: 6px;
-      border-radius: $radius-extra-large;
-      padding: 3px 5px;
-      width: 16px;
-      height: 7px;
-    }
-  }
 
   @keyframes growDown {
     0% {

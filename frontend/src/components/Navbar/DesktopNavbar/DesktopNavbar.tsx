@@ -17,7 +17,7 @@ const DesktopNavbar: React.FC = () => {
         <ul className="navbar-nav">
           <li className="navTitleDiv">
             <NavLink to="/">
-              <div className="navTitle">Calculette Falc'ohm</div>
+              <div className="navTitle">TITLE</div>
             </NavLink>
           </li>
           {navItems.map((item) => (

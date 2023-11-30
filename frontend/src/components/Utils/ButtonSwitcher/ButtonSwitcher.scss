@@ -1,0 +1,51 @@
+.buttonSwitcher {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  background-color: $background-color;
+  // height: 116px;
+  border: 0.25px solid $border-color;
+  border-radius: 8px;
+  padding: $padding-xxxs;
+  width: 150px;
+  .buttonSetValue {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    height: 100%;
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $secondary-font;
+
+    &.selected {
+      @include elevation1(7px);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: $primary-font;
+      &:hover {
+        box-shadow: 0px 1.6366515159606934px 3.2733030319213867px 0px
+          rgba(5, 24, 73, 0.2);
+        cursor: unset;
+      }
+    }
+    &:hover {
+      border-radius: 7px;
+      box-shadow: 0px 0px 5px 0px rgba(5, 24, 73, 0.2);
+    }
+  }
+}

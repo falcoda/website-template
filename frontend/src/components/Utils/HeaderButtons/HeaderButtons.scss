@@ -1,0 +1,113 @@
+.mainContainerHeaders {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  top: 1px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  .headerButtonsWrapper {
+    width: fit-content;
+    display: flex;
+    border: 0.25px solid $border-color;
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+    background-color: $background-color;
+  }
+  .nextToLeftActive {
+    .buttonContent {
+      border-right: none !important;
+    }
+  }
+
+  .headerButtons {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 0px;
+    background-color: $background-color;
+    color: $tertiary-font;
+    border-bottom: none;
+    border-top: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      filter: grayscale(50%);
+      opacity: 0.4;
+      width: 21px;
+      margin-right: 0.5rem;
+    }
+    .buttonContent {
+      padding: 0px 20px;
+      margin: 12px 0 6px 0;
+      border-right: 0.125px solid $border-color;
+      display: flex;
+      align-items: center;
+    }
+
+    &.activeButton {
+      border-right: 0.25px solid $border-color;
+      border-left: 0.25px solid $border-color;
+      background-color: $light-color;
+      color: $primary-font;
+      border-radius: 10px 10px 0px 0px;
+      margin: 0;
+      cursor: default;
+
+      .buttonContent {
+        border-right: none;
+        border-left: none;
+      }
+
+      &:hover {
+        background-color: $light-color;
+        color: $primary-font;
+        opacity: 1;
+      }
+
+      &::before {
+        content: "";
+        opacity: 0;
+      }
+
+      img {
+        filter: none;
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      background-color: $background-color;
+      color: $secondary-font;
+      opacity: 0.7;
+    }
+
+    &:first-child {
+      border-left: none;
+      border-top-left-radius: 10px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 10px;
+      border-right: none;
+      .buttonContent {
+        border-right: none !important;
+      }
+    }
+  }
+
+  @include maxScreen($breakpoint-sm) {
+    .headerButtons {
+      .buttonContent {
+        padding: 0px 10px;
+        margin: 8px 0 8px 0;
+      }
+    }
+  }
+}
