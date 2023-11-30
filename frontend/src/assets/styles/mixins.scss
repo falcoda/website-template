@@ -242,7 +242,9 @@
   border-radius: $radius-small;
   padding: $padding-xxs;
   border: 1px solid $border-color;
-  @include text-card;
+  font-weight: 400;
+  line-height: 125%;
+  @include smoothValue("font-size", 14px, 15px, $breakpoint-xs, $breakpoint-lg);
 
   &:hover {
     border: 1px solid $secondary-font;
